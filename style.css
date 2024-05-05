@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background-color: rgb(61, 202, 148);
+}
+
+main{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+h1, h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.3vw;
+    align-self: center;
+}
+
+#board{
+    width: 308px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    grid-gap: 4px;
+    align-self: center;
+    background-color: white;
+}
+
+.square{
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: rgb(61, 202, 148);
+}
+
+.o,
+.x{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.o::after{
+    content: "\2B55";
+    font-size: 3vw;
+}
+
+.x::after{
+    content: "\274C";
+    font-size: 3vw;
+}
+
+h2{
+    display: none;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 15px;
+    align-self: center;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (min-width: 900px) and (max-width: 1100px){
+    #container{
+        gap: 4vw;
+    }
+
+    h1, h2{
+        font-size: 28px;
+    }
+
+    .o::after{
+        content: "\2B55";
+        font-size: 35px;
+    }
+    
+    .x::after{
+        content: "\274C";
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px){
+    #container{
+        gap: 4vw;
+    }
+
+    h1, h2{
+        font-size: 45px;
+    }
+
+    #board{
+        width: 458px;
+        grid-template-columns: 150px 150px 150px;
+        grid-template-rows: 150px 150px 150px;
+    }
+
+    .o::after{
+        content: "\2B55";
+        font-size: 75px;
+    }
+    
+    .x::after{
+        content: "\274C";
+        font-size: 75px;
+    }
+
+    button{
+        width: 150px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 380px) and (max-width: 600px){
+    #container{
+        gap: 7vw;
+    }
+
+    h1, h2{
+        font-size: 28px;
+    }
+
+    .o::after{
+        content: "\2B55";
+        font-size: 35px;
+    }
+    
+    .x::after{
+        content: "\274C";
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 380px){
+    #container{
+        gap: 7vw;
+    }
+
+    h1, h2{
+        font-size: 8vw;
+    }
+
+    #board{
+        width: calc(75vw + 8px);
+        grid-template-columns: 25vw 25vw 25vw;
+        grid-template-rows: 25vw 25vw 25vw;
+    }
+
+    .o::after{
+        content: "\2B55";
+        font-size: 10vw;
+    }
+    
+    .x::after{
+        content: "\274C";
+        font-size: 10vw;
+    }
+
+    button{
+        width: 30vw;
+        height: 8vw;
+        font-size: 4.5vw;
+        letter-spacing: 0.4vw;
+        border: 0.8vw solid white;
+    }
+    
+    button:hover{
+        transform: scale(1.1);
+    }
+}
